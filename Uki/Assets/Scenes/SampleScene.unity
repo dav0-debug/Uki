@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &960622312
 Transform:
   m_ObjectHideFlags: 0
@@ -442,11 +442,11 @@ MonoBehaviour:
   usePartialResults: 1
   clipLengthSec: 1
   maxAlternatives: 1
-  startHidden: 0
-  hideBeforeExecute: 0
-  noActivate: 0
-  hideFromTaskbar: 0
-  hideOnFocusLost: 0
+  startHidden: 1
+  hideBeforeExecute: 1
+  noActivate: 1
+  hideFromTaskbar: 1
+  hideOnFocusLost: 1
   trayManager: {fileID: 960622313}
   inAppHotkeyEnabled: 1
   hotkeyKey: 106
