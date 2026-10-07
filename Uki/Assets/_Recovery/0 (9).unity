@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &960622312
 Transform:
   m_ObjectHideFlags: 0
@@ -423,32 +423,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cc734186453234a8a2a6c26630e43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VoiceAssistant
+  loadCommandsFromFile: 1
+  commandsFileName: voice_commands.txt
+  reloadCommandsKey: 286
   modelPath: vosk-model-small-ru-0.22
-  useGrammar: 1
-  filterUnknownPhrases: 1
-  debugGrammar: 1
   microphoneIndex: 0
   wakeWords:
-  - "\u0434\u0436\u0430\u0440\u0432\u0438\u0441"
+  - "\u044E\u043A\u0438"
+  - "\u044E\u0448\u0435\u0447\u043A\u0430"
+  - "\u043C\u0438\u043B\u0430\u044F"
+  - "\u0441\u043E\u043B\u043D\u044B\u0448\u043A\u043E"
   matchMode: 0
-  continuousListening: 1
-  conversationTimeout: 10
-  exitPhrases:
-  - "\u0445\u0432\u0430\u0442\u0438\u0442"
-  - "\u0441\u0442\u043E\u043F"
-  - "\u043F\u043E\u043A\u0430"
-  - "\u043E\u0442\u0434\u044B\u0445\u0430\u0439"
-  - "\u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438"
-  - "\u0441\u043F\u0430\u0441\u0438\u0431\u043E \u044E\u043A\u0438"
-  speakOnExit: 0
-  onActivatePhrase: "\u0441\u043B\u0443\u0448\u0430\u044E"
-  onExitPhrase: "\u0445\u043E\u0440\u043E\u0448\u043E"
-  debugConversationMode: 1
-  startHidden: 0
-  hideBeforeExecute: 0
-  noActivate: 0
-  hideFromTaskbar: 0
-  hideOnFocusLost: 0
+  startHidden: 1
+  hideBeforeExecute: 1
+  noActivate: 1
+  hideFromTaskbar: 1
+  hideOnFocusLost: 1
   trayManager: {fileID: 960622313}
   inAppHotkeyEnabled: 1
   hotkeyKey: 106
@@ -462,22 +452,75 @@ MonoBehaviour:
   globalHotkeyAlt: 0
   commands:
   - phrases:
-    - "\u0431\u043B\u043E\u043A\u043D\u043E\u0442"
-    - "\u043D\u043E\u0442\u043F\u0430\u0434"
-    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0431\u043B\u043E\u043A\u043D\u043E\u0442"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u043C\u0443\u0437\u044B\u043A\u0443"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u043C\u0443\u0437\u044B\u043A\u0443"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u044F\u043D\u0434\u0435\u043A\u0441
+      \u043C\u0443\u0437\u044B\u043A\u0443"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u044F\u043D\u0434\u0435\u043A\u0441
+      \u043C\u0443\u0437\u044B\u043A\u0443"
     paths:
-    - notepad.exe
+    - "\"C:\\Users\\user\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\\u042F\u043D\u0434\u0435\u043A\u0441
+      \u041C\u0443\u0437\u044B\u043A\u0430.lnk\""
   - phrases:
-    - "\u043A\u0430\u043B\u044C\u043A\u0443\u043B\u044F\u0442\u043E\u0440"
-    - "\u043A\u0430\u043B\u044C\u043A"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u0441 \u0442\u0438\u043C"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0441 \u0442\u0438\u043C"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0441\u0442\u0438\u043C"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u0441\u0442\u0438\u043C"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u0441 \u0442\u0435\u043C"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0441 \u0442\u0435\u043C"
     paths:
-    - calc.exe
+    - '"C:\steam\steam.exe"'
   - phrases:
-    - "\u0431\u0440\u0430\u0443\u0437\u0435\u0440"
-    - "\u0445\u0440\u043E\u043C"
-    - "\u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u043A\u044D\u0441"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u043A\u044D\u0441"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u043A\u0430\u044D\u0441"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u043A\u0430\u044D\u0441"
     paths:
-    - chrome.exe
+    - '"C:\Users\user\Desktop\Counter-Strike 2.url"'
+  - phrases:
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u0434\u043E\u0442\u0443"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0434\u043E\u0442\u0443"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0434\u043E\u0442\u043A\u0443"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u0434\u043E\u0442\u043A\u0443"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u0434\u043E\u0442\u0430\u043D"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0434\u043E\u0442\u0430\u043D"
+    paths:
+    - '"C:\Users\user\Desktop\Dota 2.url"'
+  - phrases:
+    - "\u043F\u043E\u0437\u043E\u0432\u0438 \u043B\u0438\u043B\u0438\u0442"
+    - "\u0433\u0434\u0435 \u043B\u0438\u043B\u0438\u0442"
+    paths:
+    - "\"C:\\Users\\user\\Desktop\\\u041D\u0435\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044E\u0449\u0430\u044F
+      \u041B\u0438\u043B\u0438\u0442.url\""
+  - phrases:
+    - "\u0437\u0430 \u0440\u0430\u0431\u043E\u0442\u0443"
+    - "\u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C"
+    - "\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0440\u0435\u0436\u0438\u043C"
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u0432\u0441\u0451 \u0447\u0442\u043E
+      \u043D\u0443\u0436\u043D\u043E \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B"
+    - "\u0440\u0430\u0431\u043E\u0442\u0430\u0430\u0435\u043C"
+    paths:
+    - '"C:\Program Files\Unity Hub\Unity Hub.exe"'
+    - '"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio.lnk"'
+    - '"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Google Chrome.lnk"'
+    - "\"C:\\Users\\user\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\\u042F\u043D\u0434\u0435\u043A\u0441
+      \u041C\u0443\u0437\u044B\u043A\u0430.lnk\""
+    - '"C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\GitHub,
+      Inc\GitHub Desktop.lnk"'
+  - phrases:
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u0437\u0430\u043F\u0440\u0435\u0442"
+    - "\u0437\u0430\u043F\u0440\u0435\u0442"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0437\u0430\u043F\u0440\u0435\u0442"
+    paths:
+    - '"C:\Users\user\Documents\zapret-discord-youtube-1.10.1\general (FAKE TLS AUTO
+      ALT).bat"'
+  - phrases:
+    - "\u0432\u043A\u043B\u044E\u0447\u0438 \u0433\u0438\u0442"
+    - "\u0433\u0438\u0442"
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0433\u0438\u0442"
+    paths:
+    - '"C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\GitHub,
+      Inc\GitHub Desktop.lnk"'
   hotkeyCommands:
   - phrases:
     - "\u0441\u0432\u0435\u0440\u043D\u0438 \u043E\u043A\u043D\u043E"
@@ -502,6 +545,27 @@ MonoBehaviour:
     - V
     delayMs: 20
   - phrases:
+    - "\u0432\u044B\u0440\u0435\u0436\u0438"
+    - "\u0432\u044B\u0440\u0435\u0437\u0430\u0442\u044C"
+    keys:
+    - Ctrl
+    - X
+    delayMs: 20
+  - phrases:
+    - "\u043E\u0442\u043C\u0435\u043D\u0438"
+    - "\u043E\u0442\u043C\u0435\u043D\u0438\u0442\u044C \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435"
+    keys:
+    - Ctrl
+    - Z
+    delayMs: 20
+  - phrases:
+    - "\u0441\u043E\u0445\u0440\u0430\u043D\u0438"
+    - "\u0441\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"
+    keys:
+    - Ctrl
+    - S
+    delayMs: 20
+  - phrases:
     - "\u0437\u0430\u043A\u0440\u043E\u0439 \u043E\u043A\u043D\u043E"
     - "\u0437\u0430\u043A\u0440\u044B\u0442\u044C \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0443"
     keys:
@@ -509,49 +573,66 @@ MonoBehaviour:
     - F4
     delayMs: 20
   - phrases:
-    - "\u0434\u0438\u0441\u043F\u0435\u0442\u0447\u0435\u0440 \u0437\u0430\u0434\u0430\u0447"
+    - "\u043F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438 \u043E\u043A\u043D\u043E"
+    - "\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0435 \u043E\u043A\u043D\u043E"
+    keys:
+    - Alt
+    - Tab
+    delayMs: 20
+  - phrases:
+    - "\u043E\u0442\u043A\u0440\u043E\u0439 \u0434\u0438\u0441\u043F\u0435\u0442\u0447\u0435\u0440
+      \u0437\u0430\u0434\u0430\u0447"
     - "\u0434\u0438\u0441\u043F\u0435\u0442\u0447\u0435\u0440"
     keys:
     - Ctrl
     - Shift
     - Esc
     delayMs: 20
+  - phrases:
+    - "\u0441\u043A\u0440\u0438\u043D\u0448\u043E\u0442 \u044D\u043A\u0440\u0430\u043D\u0430"
+    - "\u0441\u0434\u0435\u043B\u0430\u0439 \u0441\u043D\u0438\u043C\u043E\u043A"
+    keys:
+    - Win
+    - PrintScreen
+    delayMs: 20
+  - phrases:
+    - "\u0432\u044B\u0434\u0435\u043B\u0438 \u0432\u0441\u0451"
+    - "\u0432\u044B\u0431\u0440\u0430\u0442\u044C \u0432\u0441\u0451"
+    keys:
+    - Ctrl
+    - A
+    delayMs: 20
+  - phrases:
+    - "\u043D\u0430\u0439\u0434\u0438"
+    - "\u043F\u043E\u0438\u0441\u043A"
+    - "\u043D\u0430\u0439\u0442\u0438 \u0442\u0435\u043A\u0441\u0442"
+    keys:
+    - Ctrl
+    - F
+    delayMs: 20
+  - phrases:
+    - "\u043F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438 \u044F\u0437\u044B\u043A"
+    - "\u0434\u0440\u0443\u0433\u043E\u0439 \u044F\u0437\u044B\u043A"
+    keys:
+    - Shift
+    - Alt
+    delayMs: 20
   dialogResponses:
   - phrases:
-    - "\u043F\u0440\u0438\u0432\u0435\u0442"
-    - "\u0437\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439"
-    - "\u0445\u0430\u0439"
-    responses:
-    - "\u043F\u0440\u0438\u0432\u0435\u0442"
-    - "\u0437\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439, \u0447\u0435\u043C
-      \u043C\u043E\u0433\u0443 \u043F\u043E\u043C\u043E\u0447\u044C"
-    - "\u043F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E"
-  - phrases:
-    - "\u043A\u0430\u043A \u0434\u0435\u043B\u0430"
-    - "\u043A\u0430\u043A \u0442\u044B"
-    responses:
-    - "\u0443 \u043C\u0435\u043D\u044F \u0432\u0441\u0451 \u043E\u0442\u043B\u0438\u0447\u043D\u043E"
-    - "\u0432\u0441\u0451 \u0445\u043E\u0440\u043E\u0448\u043E, \u0441\u043F\u0430\u0441\u0438\u0431\u043E
-      \u0447\u0442\u043E \u0441\u043F\u0440\u043E\u0441\u0438\u043B"
-  - phrases:
-    - "\u043A\u0442\u043E \u0442\u044B"
-    - "\u043A\u0430\u043A \u0442\u0435\u0431\u044F \u0437\u043E\u0432\u0443\u0442"
-    responses:
-    - "\u044F \u0433\u043E\u043B\u043E\u0441\u043E\u0432\u043E\u0439 \u043F\u043E\u043C\u043E\u0449\u043D\u0438\u043A"
-    - "\u043C\u0435\u043D\u044F \u0437\u043E\u0432\u0443\u0442 \u0434\u0436\u0430\u0440\u0432\u0438\u0441"
-  - phrases:
     - "\u0441\u043F\u0430\u0441\u0438\u0431\u043E"
-    - "\u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044E"
+    - "\u0442\u044B \u0443\u043C\u043D\u0438\u0446\u0430"
+    - "\u0443\u043C\u043D\u0438\u0447\u043A\u0430"
     responses:
-    - "\u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430"
-    - "\u0432\u0441\u0435\u0433\u0434\u0430 \u0440\u0430\u0434 \u043F\u043E\u043C\u043E\u0447\u044C"
+    - "\u043A\u0430\u043A \u043F\u0440\u0438\u044F\u0442\u043D\u043E \u044D\u0442\u043E
+      \u0441\u043B\u044B\u0448\u0430\u0442\u044C"
+    - "\u0441\u043F\u0430\u0441\u0438\u0438\u0431\u043E \u0431\u043E\u043B\u044C\u0448\u043E\u0435"
+    - "\u0432\u0441\u0435\u0433\u0434\u0430 \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430"
   enableTTS: 1
   voiceName: Microsoft Zira Desktop
   speechRate: 0
   speechVolume: 100
   dialogText: {fileID: 1155190365}
   hotkeyHintText: {fileID: 1924306034}
-  statusText: {fileID: 0}
 --- !u!4 &1730625118
 Transform:
   m_ObjectHideFlags: 0
